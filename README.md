@@ -5,7 +5,7 @@
 - http://127.0.0.1:3000/login/
 - http://127.0.0.1:3000/transfer/
 ## Deployment on internet
-Finally deployment problem Cyclic + MongoDB Atlas solved after follow this documentation:
+Finally deployment problem Cyclic.sh + MongoDB Atlas solved after follow this documentation:
 
 `
 https://docs.cyclic.sh/how-to/using-mongo-db
