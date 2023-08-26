@@ -104,14 +104,13 @@ paths:
                   type: object
                   properties:
                     error:
-                      type: string                        
-                                  
+                      type: string                           
   /transfer:
       post:
         security:
           - bearerAuth: []
 
-        summary: register new member
+        summary: new transfer
         requestBody:
           content:
             application/json:
@@ -158,13 +157,6 @@ paths:
       get:
         security:
           - bearerAuth: []
-
-        summary: get all transfer data
-        requestBody:
-          content:
-            application/json:
-              schema:
-                type: object
         responses:
           '200':
             description: Display all transfer data
@@ -201,7 +193,6 @@ paths:
                   properties:
                     error:
                       type: string
-                          
           '403':
             description: Only maker and approver allow to access
             content:
@@ -211,12 +202,20 @@ paths:
                   properties:
                     error:
                       type: string
-  /transfer/:id:                      
+  /transfer/{id}:                      
       patch:
         security:
           - bearerAuth: []
-                
-        summary: register new member
+        summary: change status
+        parameters:
+          - name: id
+            in: path
+            required: true
+            description: Parameter description in CommonMark or HTML.
+            schema:
+              type : string
+              format: guid
+              minimum: 1        
         requestBody:
           content:
             application/json:
